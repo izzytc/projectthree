@@ -1,14 +1,11 @@
 body {
 font-family:'Lato', sans-serif;
 background-color: black;
-color: white;
-margin: 25px;
-padding-top: 40px;
-font-size: 17px;
-padding-bottom: 30px;
+color: black;
+font-size: 30px;
 
-   
 }
+
 
 p.big {
     line-height: 200%;
@@ -202,9 +199,18 @@ header .navbar-default .navbar-nav .active a:hover {
   font-size: 65px;
   font-family: 'Kaushan Script', cursive;
 }
-.twitter-widget-0 {
-  margin-left: 0px
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
