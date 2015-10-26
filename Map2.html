@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDeOAfcKlJFrCTg6-WuDZGZjUcUm6YPpb0&sensor=false&extension=.js'></script> 
+    <title>Place details</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      
+    }
+    .gm-style-iw * {
+        display: block;
+        width: 100%;
+    }
+    .gm-style-iw h4, .gm-style-iw p {
+        margin: 0;
+        padding: 0;
+    }
+    .gm-style-iw a {
+        color: #4272db;
+    }
+    </style>
+    <script>
+
+    
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -40, lng: 175},
+    zoom: 5
+  });
+
+  var infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+
+  service.getDetails({
+    placeId: 'ChIJy3TpSfyxOG0RcLQTomPvAAo'
+  }, function(place, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+      });
+    }
+  });
+}
+
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeOAfcKlJFrCTg6-WuDZGZjUcUm6YPpb0&signed_in=true&libraries=places&callback=initMap" async defer></script>
+
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="signin.css" rel="stylesheet">
+
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  </body>
+</html>
